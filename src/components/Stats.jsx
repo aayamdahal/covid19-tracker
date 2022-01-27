@@ -9,7 +9,7 @@ const Stats = ({ title, cases, total }) => {
         </Typography>
         <h2 className="stat-case">{cases}</h2>
         <Typography className="stat-total" color="textSecondary">
-          <div style={{ display: "flex" }}> total :{total}</div>
+          <div style={{ display: "flex" }}> Total: {total}</div>
         </Typography>
       </CardContent>
     </Card>
