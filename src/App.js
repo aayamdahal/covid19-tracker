@@ -140,7 +140,7 @@ function App() {
           </div>
           <div className="app-right">
             <Card>
-              <h3>Live cases by country</h3>
+              <h3>Highest cases by country</h3>
               <CardContent className="card-content">
                 <Table countries={tableData} />
               </CardContent>
