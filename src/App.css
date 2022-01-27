@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: (62.5/100) * 16;
+}
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.app-left {
+  flex: 0.8;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.statistics {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.statistics-info {
+  display: flex;
+  flex-direction: column;
+}
+.map {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
+}
