@@ -64,6 +64,8 @@ function App() {
         setCountry(countryCode);
         setCountryInfo(data);
       });
+      setMapZoom()
+      setMapCenter()
   };
 
   return (
