@@ -27,11 +27,6 @@
   display: flex;
   flex-direction: column;
 }
-.map {
-  display: flex;
-  justify-content: center;
-  place-items: center;
-}
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
