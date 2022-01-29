@@ -6,6 +6,7 @@ import Map from "./components/Map";
 import { FormControl, MenuItem, Select } from "@mui/material";
 import Table from "./components/Table";
 import { sortData } from "./sortdata";
+import "leaflet/dist/leaflet.css";
 
 function App() {
   const [countries, setCountries] = useState([]); //listing countries
@@ -14,6 +15,8 @@ function App() {
   const [country, setCountry] = useState("Nepal"); //managing country's state
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [mapZoom, setMapZoom] = useState(3);
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/countries/np")
       .then((response) => response.json())
@@ -136,7 +139,7 @@ function App() {
                 }
               />
             </div>
-            <Map />
+            <Map center={mapCenter} zoom={mapZoom} />
           </div>
           <div className="app-right">
             <Card>
