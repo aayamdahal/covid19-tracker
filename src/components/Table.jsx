@@ -1,4 +1,5 @@
 import React from "react";
+import { numberWithCommas } from "../Helper";
 import "../Table.css";
 const Table = ({ countries }) => {
   return (
@@ -6,7 +7,7 @@ const Table = ({ countries }) => {
       {countries.map(({ country, cases }) => (
         <tr>
           <td>{country}</td>
-          <td>{cases}</td>
+          <td>{numberWithCommas(cases)}</td>
         </tr>
       ))}
     </div>
