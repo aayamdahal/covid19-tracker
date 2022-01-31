@@ -7,6 +7,7 @@ import { FormControl, MenuItem, Select } from "@mui/material";
 import Table from "./components/Table";
 import { sortData } from "./sortdata";
 import "leaflet/dist/leaflet.css";
+import { numberWithCommas } from "./Helper";
 
 function App() {
   const [countries, setCountries] = useState([]); //listing countries
@@ -22,6 +23,8 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCountryInfo(data);
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        setMapZoom(5);
       });
   }, []);
 
@@ -63,9 +66,10 @@ function App() {
       .then((data) => {
         setCountry(countryCode);
         setCountryInfo(data);
+
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        setMapZoom(5);
       });
-      setMapZoom()
-      setMapCenter()
   };
 
   return (
@@ -93,14 +97,14 @@ function App() {
                 title="Coronavirus Cases"
                 cases={
                   countryInfo.todayCases ? (
-                    <p>{countryInfo.todayCases}</p>
+                    <p>{numberWithCommas(countryInfo.todayCases)}</p>
                   ) : (
                     <p>Data not updated</p>
                   )
                 }
                 total={
                   countryInfo.cases ? (
-                    <p>{countryInfo.cases}</p>
+                    <p>{numberWithCommas(countryInfo.cases)}</p>
                   ) : (
                     <p>Data not updated</p>
                   )
@@ -110,14 +114,14 @@ function App() {
                 title="Recovered"
                 total={
                   countryInfo.recovered ? (
-                    <p>{countryInfo.recovered}</p>
+                    <p>{numberWithCommas(countryInfo.recovered)}</p>
                   ) : (
                     <p>Data not updated</p>
                   )
                 }
                 cases={
                   countryInfo.todayRecovered ? (
-                    <p>{countryInfo.todayRecovered}</p>
+                    <p>{numberWithCommas(countryInfo.todayRecovered)}</p>
                   ) : (
                     <p>Data not updated</p>
                   )
@@ -127,14 +131,14 @@ function App() {
                 title="Deaths"
                 total={
                   countryInfo.deaths ? (
-                    <p>{countryInfo.deaths}</p>
+                    <p>{numberWithCommas(countryInfo.deaths)}</p>
                   ) : (
                     <p>Data not updated</p>
                   )
                 }
                 cases={
                   countryInfo.todayDeaths ? (
-                    <p>{countryInfo.todayDeaths}</p>
+                    <p>{numberWithCommas(countryInfo.todayDeaths)}</p>
                   ) : (
                     <p>Data not updated</p>
                   )
