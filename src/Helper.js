@@ -6,8 +6,7 @@ export function numberWithCommas(cases) {
 
 const caseTypeColors = {
   cases: {
-    hex: "#CC1034",
-    multiplier: 400,
+    hex: "#ff8a8a",
   },
 };
 
@@ -17,7 +16,11 @@ export const showDataOnMap = (data, casesType = "cases") =>
       center={[country.countryInfo.lat, country.countryInfo.long]}
       color={caseTypeColors[casesType].hex}
       fillColor={caseTypeColors[casesType].hex}
-      fillOpacity={0.4}
-      radius={Math.sqrt(2) * 18}
+      fillOpacity={0.5}
+      radius={
+        country[casesType] >= 40750500
+          ? Math.sqrt(country[casesType]) * 150
+          : Math.sqrt(country[casesType]) * 50
+      }
     ></Circle>
   ));
