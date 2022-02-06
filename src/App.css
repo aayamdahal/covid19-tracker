@@ -31,6 +31,7 @@ body {
 .icon {
   font-size: 1.4rem;
   margin-right: 0.2rem;
+  margin-bottom: 0.4rem;
 }
 .card {
   border: 1px solid #ccc;
