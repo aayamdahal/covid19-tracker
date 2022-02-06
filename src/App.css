@@ -4,14 +4,37 @@
   box-sizing: border-box;
   font-size: (62.5/100) * 16;
 }
+body {
+  background-color: #eee;
+}
 .app {
   display: flex;
   justify-content: space-evenly;
   padding: 0.9rem;
 }
-
+.app-right {
+  display: flex;
+  align-items: center;
+}
+.app-right-card {
+  padding: 1rem 0rem;
+}
+.app-right h3 {
+  text-align: center;
+}
+.header {
+  margin-bottom: 1rem;
+}
 .app-left {
   flex: 0.8;
+}
+.icon {
+  font-size: 1.4rem;
+  margin-right: 0.2rem;
+}
+.card {
+  border: 1px solid #ccc;
+  background-color: #e5e5e5;
 }
 .header {
   display: flex;
@@ -22,6 +45,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+.stat-title {
+  font-size: 1.2rem;
 }
 .statistics-info {
   display: flex;
