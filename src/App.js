@@ -8,6 +8,9 @@ import Table from "./components/Table";
 import { sortData } from "./sortdata";
 import "leaflet/dist/leaflet.css";
 import { numberWithCommas } from "./Helper";
+import { MdCoronavirus } from "react-icons/md";
+import { GiHealthNormal } from "react-icons/gi";
+import { GiDeathSkull } from "react-icons/gi";
 
 function App() {
   const [countries, setCountries] = useState([]); //listing countries
@@ -24,6 +27,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCountryInfo(data);
+        console.log(data);
       });
   }, []);
 
@@ -94,6 +98,7 @@ function App() {
             </div>
             <div className="statistics">
               <Stats
+                icon={<MdCoronavirus className="icon" />}
                 title="Coronavirus Cases"
                 cases={
                   countryInfo.todayCases ? (
@@ -111,6 +116,7 @@ function App() {
                 }
               />
               <Stats
+                icon={<GiHealthNormal className="icon" />}
                 title="Recovered"
                 total={
                   countryInfo.recovered ? (
@@ -128,6 +134,7 @@ function App() {
                 }
               />
               <Stats
+                icon={<GiDeathSkull className="icon" />}
                 title="Deaths"
                 total={
                   countryInfo.deaths ? (
@@ -148,7 +155,7 @@ function App() {
             <Map center={mapCenter} zoom={mapZoom} countries={mapCountries} />
           </div>
           <div className="app-right">
-            <Card>
+            <Card className="app-right-card">
               <h3>Highest cases by country</h3>
               <CardContent className="card-content">
                 <Table countries={tableData} />
