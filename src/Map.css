@@ -10,3 +10,34 @@
 .map .leaflet-container {
   height: 100%;
 }
+
+.info-flag {
+  transform: scale(0.7);
+  height: 100px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
+}
+.info-container {
+  width: 180px;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #eee !important;
+  color: #333;
+  box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
+}
+.info-case,
+.info-recovered,
+.info-death {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.info-name {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
