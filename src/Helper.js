@@ -1,4 +1,4 @@
-import { Circle } from "react-leaflet";
+import { Circle, Popup } from "react-leaflet";
 
 export function numberWithCommas(cases) {
   return cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -22,5 +22,26 @@ export const showDataOnMap = (data, casesType = "cases") =>
           ? Math.sqrt(country[casesType]) * 150
           : Math.sqrt(country[casesType]) * 50
       }
-    ></Circle>
+    >
+      <Popup>
+        <div className="info-container">
+          <div
+            className="info-flag"
+            style={{
+              backgroundImage: `url(${country.countryInfo.flag})`,
+            }}
+          ></div>
+          <div className="info-name">{country.country}</div>
+          <div className="info-case">
+            Cases: {numberWithCommas(country.cases)}
+          </div>
+          <div className="info-recovered">
+            Recovered: {numberWithCommas(country.recovered)}{" "}
+          </div>
+          <div className="info-death">
+            Deaths: {numberWithCommas(country.deaths)}
+          </div>
+        </div>
+      </Popup>
+    </Circle>
   ));
