@@ -17,6 +17,7 @@ body {
   align-items: center;
 }
 .app-right-card {
+  background-color: #ccc;
   padding: 1rem 0rem;
 }
 .app-right h3 {
@@ -47,12 +48,21 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+.stat-box {
+  flex: 1;
+}
+.stat-box:not(:last-child) {
+  margin-right: 10px;
+}
 .stat-title {
   font-size: 1.2rem;
 }
 .statistics-info {
   display: flex;
   flex-direction: column;
+}
+.css-46bh2p-MuiCardContent-root {
+  padding: 15px !important;
 }
 @media (max-width: 990px) {
   .app {
