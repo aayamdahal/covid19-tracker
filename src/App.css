@@ -78,4 +78,7 @@ body {
   .stat-box:not(:last-child) {
     margin-right: 0px;
   }
+  .app-right {
+    margin-top: 1rem;
+  }
 }
