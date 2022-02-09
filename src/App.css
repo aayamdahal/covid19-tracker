@@ -68,4 +68,14 @@ body {
   .app {
     flex-direction: column;
   }
+  .statistics {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .statistics > * {
+    margin-bottom: 0.5rem;
+  }
+  .stat-box:not(:last-child) {
+    margin-right: 0px;
+  }
 }
