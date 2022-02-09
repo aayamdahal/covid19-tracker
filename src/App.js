@@ -27,7 +27,6 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCountryInfo(data);
-        console.log(data);
       });
   }, []);
 
@@ -98,6 +97,7 @@ function App() {
             </div>
             <div className="statistics">
               <Stats
+              
                 icon={<MdCoronavirus className="icon" />}
                 title="Coronavirus Cases"
                 cases={
